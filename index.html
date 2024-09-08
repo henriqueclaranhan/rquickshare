@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/icons/icon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/font-face.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script defer src="scripts/main.js"></script>
+	<title>RQuickShare - Quick Share for Linux and MacOS</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<a id="nav-logo-a" href="/">
+				<img src="assets/icons/128x128.png" alt="QuickShare icon">
+				<span>RQuickShare</span>
+			</a>
+			<ul id="header-nav-list">
+				<li><a href="https://github.com/Martichou/rquickshare">GitHub</a></li>
+				<li><a href="https://github.com/Martichou/rquickshare/blob/master/README.md#limitations">Limitations</a>
+				</li>
+				<li><a href="https://github.com/Martichou/rquickshare/blob/master/README.md#faq">FAQ</a></li>
+			</ul>
+			<a id="nav-download-button" class="button" href="#downloads">
+				Download RQuickShare
+				<img src="assets/icons/download.svg" alt="Download icon">
+			</a>
+		</nav>
+	</header>
+	<main>
+		<section id="hero">
+			<div id="hero-copy">
+				<img src="assets/icons/128x128.png" alt="QuickShare icon">
+				<h1>RQuickShare - Quick Share for Linux and MacOS</h1>
+				<h2>Rust implementation of NearbyShare/QuickShare from Android for Linux and macOS</h2>
+				<p>Send and receive photos, documents and more on nearby devices.</p>
+				<a id="hero-download-button" class="button" href="#downloads">
+					Download RQuickShare
+					<img src="assets/icons/download.svg" alt="Download icon">
+				</a>
+			</div>
+			<div id="hero-media-wrapper">
+				<img src="assets/images/demo.png" alt="RQuickShare Demo">
+			</div>
+		</section>
+		<section id="downloads">
+			<h1>Installation</h1>
+			<p>You simply have to download the latest release.</p>
+
+			<div id="download-options">
+				<div class="download-item">
+					<img src="assets/images/tux.png" alt="Tux image">
+					<button class="button release-download-button">
+						Download for Linux (main)
+						<img src="assets/icons/arrow-down.svg" alt="Arrow down icon">
+					</button>
+					<div id="dropdown-content-linux-main" class="dropdown-content"></div>
+				</div>
+				<div class="download-item">
+					<img id="img-release-legacy" src="assets/images/tux.png" alt="Tux image">
+					<button class="button release-download-button">
+						Download for Linux (legacy)
+						<img src="assets/icons/arrow-down.svg" alt="Arrow down icon">
+					</button>
+					<div id="dropdown-content-linux-legacy" class="dropdown-content"></div>
+				</div>
+				<div class="download-item">
+					<img src="assets/images/apple.png" alt="Apple image">
+					<button class="button release-download-button">
+						Download for macOS
+						<img src="assets/icons/arrow-down.svg" alt="Arrow down icon">
+					</button>
+					<div id="dropdown-content-macos" class="dropdown-content"></div>
+				</div>
+			</div>
+
+			<h3>Important notes:</h3>
+			<ul>
+				<li>The minimum GLIBC version supported is included in the pkg name</li>
+				<ul>
+					<li> can check yours with <code>ldd --version</code></li>
+				</ul>
+			</ul>
+			<ul>
+				<li>RQuickShare is distributed with two version (main & legacy):</li>
+				<ul>
+					<li>Legacy is for compatibility with older Ubuntu versions</li>
+					<li>Main is for future support of newer versions of Ubuntu</li>
+				</ul>
+			</ul>
+
+			<h3 class="installation-title">macOS</h3>
+			<p>Simply install the <code>.dmg</code>.</p>
+			<p>
+				Note that you may have to allow the app for installation and first open under
+				<code>Settings > Privacy & Security > Security</code>
+				(you should see a dialog asking for permission.)
+			</p>
+
+			<h3 class="installation-title">Debian</h3>
+			<p><code class="code-box">sudo dpkg -i r-quick-share_${VERSION}.deb</code></p>
+
+			<h3 class="installation-title">RPM</h3>
+			<p><code class="code-box">sudo rpm -i r-quick-share-${VERSION}.rpm</code></p>
+
+			<h3 class="installation-title">AppImage (no root required)</h3>
+			<p>
+				AppImage is a little different.There's no installation needed,
+				you simply have to give it the executable permission (+x on a chmod) to run it.
+			</p>
+			<p><code class="code-box">chmod +x r-quick-share_${VERSION}.AppImage</code></p>
+			<p>You can then either double click on it, or run it from the cmd line:</p>
+			<p><code class="code-box">./r-quick-share_${VERSION}.AppImage</code></p>
+
+			<h3 class="installation-title">Snap</h3>
+			<p>The snap is not yet on the store, but you can install it with the following (you may need sudo).</p>
+			<p><code class="code-box">snap install --dangerous r-quick-share_${VERSION}.snap</code></p>
+
+			<br>
+
+			<hr>
+			<details id="unofficial-installation-details">
+				<summary>Unofficial Installation Methods</summary>
+				<div>
+					<h3 class="installation-title">AUR (Arch)</h3>
+					<p>For Arch Linux, you can install it from the AUR by using an AUR helper like yay.</p>
+					<p><code class="code-box">yay -S r-quick-share</code></p>
+
+					<h3 class="installation-title">Nix</h3>
+					<p>Available here:
+						<a
+							href="https://search.nixos.org/packages?channel=24.05&show=rquickshare&type=packages&query=rquickshare">
+							NixOS
+						</a>:
+					</p>
+					<p>
+						A nix-shell will temporarily modify your $PATH environment variable.
+						This can be used to try a piece of software before deciding to permanently install it.
+					</p>
+					<p><code class="code-box">$ nix-shell -p rquickshare</code></p>
+				</div>
+			</details>
+			<hr>
+		</section>
+	</main>
+	<footer>
+		<div>
+			<div id="see-on-github">
+				<p>See on GitHub</p>
+				<a href="https://github.com/Martichou/rquickshare">
+					<img src="assets/icons/github.png" alt="GitHub icon">
+				</a>
+			</div>
+			<p><em>&copy; Martin André</em></p>
+		</div>
+	</footer>
+</body>
+
+</html>
